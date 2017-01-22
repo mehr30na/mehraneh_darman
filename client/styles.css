@@ -1,3 +1,14 @@
+* {
+	direction: rtl;
+}
+@font-face {
+  font-family: Vazir;
+  src: url('app/fonts/Vazir.eot');
+  src: url('app/fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+       url('app/fonts/Vazir.woff') format('woff'),
+       url('app/fonts/Vazir.ttf') format('truetype');
+  font-weight: normal;
+}
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
