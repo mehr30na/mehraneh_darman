@@ -13,15 +13,14 @@ import 'rxjs/add/operator/catch';
 export class PatientService {
   private Url = 'http://localhost:8000/api/patient';  // URL to web API
   constructor (private http: Http) {}
-  getPatients (): Observable<Patient[]> {
+  getPatients (): Observable{
     return this.http.get(this.Url)
                     .map(this.extractData)
                     .catch(this.handleError);
   }
   private extractData(res: Response) {
-    let body = res.json();
-    console.log(body);
-    return body || { };
+    let response = res.json();
+    return response;
   }
   private handleError (error: Response | any) {
     // In a real world app, we might use a remote logging infrastructure

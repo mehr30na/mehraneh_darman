@@ -12,6 +12,7 @@ import { PatientService } from './patient.service'
 
 export class PatientComponent {
 
+	response:any;
 	errorMessage: string;
 	patients: Patient[];
 
@@ -31,9 +32,17 @@ export class PatientComponent {
 
 	getPatients() {
 		this.patientService.getPatients().subscribe(
-			patients => this.patients = patients,
-			error =>  this.errorMessage = <any>error
+			serverresponse => {
+				this.patients = <any>serverresponse.data, 
+				this.total = <number>serverresponse.total,
+				console.log(this.patients);
+			},
+			error => {this.errorMessage = <any>error}
+
 			);
-		console.log()
+
+
+		// console.log(this.response);
+
 	}
 }
