@@ -1,6 +1,5 @@
 import { Injectable }     from '@angular/core';
 import { Http, Response } from '@angular/http';
-
 import { Patient } from './Patient';
 import { Observable } from 'rxjs/Observable';
 
@@ -13,7 +12,7 @@ import 'rxjs/add/operator/catch';
 export class PatientService {
   private Url = 'http://localhost:8000/api/patient';  // URL to web API
   constructor (private http: Http) {}
-  getPatients (): Observable{
+  getPatients (): Observable<any>{
     return this.http.get(this.Url)
                     .map(this.extractData)
                     .catch(this.handleError);

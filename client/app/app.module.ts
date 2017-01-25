@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { Routing } from './app.route';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { PatientService } from './patient/patient.service'
+import { SpinnerComponent } from './shared/spinner.component'
+
 
 
 
@@ -16,7 +18,7 @@ import { PatientComponent }  from './patient/patient.component';
 
 @NgModule({
   imports:      [ BrowserModule, RouterModule, Routing,HttpModule,JsonpModule ],
-  declarations: [ AppComponent, HeaderComponent, SidebarComponent, PatientComponent ],
+  declarations: [ AppComponent, HeaderComponent, SidebarComponent, PatientComponent,SpinnerComponent ],
   bootstrap:    [ AppComponent ],
   providers: 	[ PatientService ]
 })

@@ -1,3 +1,4 @@
+<spinner></spinner>
 <div class="panel panel-default panel-table">
   <div class="panel-heading">
     <div class="row">
@@ -13,20 +14,20 @@
     <table class="table table-striped table-bordered table-list table-hover text-center">
       <thead>
         <tr>
-          
+
           <th class="hidden-xs">ردیف</th>
           <th>نام</th>
           <th>کد ملی</th>
           <th>شماره پرونده</th>
           <th>نام پزشک</th>
           <th><em class="glyphicon glyphicon-cog"></em></th>
-        </tr> 
+        </tr>
       </thead>
       <tbody>
         <tr *ngFor="let patient of patients">
-          
+
           <td class="hidden-xs">{{patient.id}}</td>
-          
+
           <td>{{patient.name}}</td>
           <td>{{patient.national_code}}</td>
           <td>{{patient.file_number}}</td>

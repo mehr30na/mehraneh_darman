@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output,EventEmitter  } from '@angular/core';
 import { Patient } from './Patient';
 import { PatientService } from './patient.service'
 
@@ -24,25 +24,30 @@ export class PatientComponent {
 	next_page_url: string;
 	prev_page_url:string;
 	per_page:number;
+  loading:boolean;
 
+  @Output() onLoad = new EventEmitter();
 
-	constructor (private patientService: PatientService) {}
+	constructor (private patientService: PatientService) {
+
+  }
 
 	ngOnInit() { this.getPatients(); }
 
 	getPatients() {
+    this.loading=true;
 		this.patientService.getPatients().subscribe(
 			serverresponse => {
-				this.patients = <any>serverresponse.data, 
+				this.patients = <Patient[]>serverresponse.data,
 				this.total = <number>serverresponse.total,
 				console.log(this.patients);
+        this.loading=false;
+
 			},
-			error => {this.errorMessage = <any>error}
+			error => {this.errorMessage = <string>error}
 
 			);
-
-
-		// console.log(this.response);
+    this.onLoad.emit(false);
 
 	}
 }

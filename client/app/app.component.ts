@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
 	templateUrl: 'app/app.component.html'
 })
 
-export class AppComponent  { 
-	name = 'Angular'; 
+export class AppComponent  {
+	name = 'Angular';
 }
