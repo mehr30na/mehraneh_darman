@@ -1,7 +1,7 @@
 import { Component, Output,EventEmitter  } from '@angular/core';
 import { Patient } from './Patient';
 import { PatientService } from './patient.service';
-import { FormBuilder, Validators } from '@angular/forms';
+// import { FormBuilder, Validators } from '@angular/forms';
 
 
 
@@ -16,28 +16,31 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 export class PatientComponent {
 
-	public patientForm = this.fb.group({
-		name: ["", Validators.required],
-		national_code: ["", Validators.required],
-		idcrd_number: ["", Validators.required],
-		birt_hdate: ["", Validators.required],
-		father_name: ["", Validators.required],
-		birth_place: ["", Validators.required],
-		living_place: ["", Validators.required],
-		file_number: ["", Validators.required],
-		gender: ["", Validators.required],
-		phone: ["", Validators.required],
-		mobile: ["", Validators.required],
-		cancer_type: ["", Validators.required],
-		marital_status: ["", Validators.required],
-		doctor_name: ["", Validators.required],
-		picture: ["", Validators.required],
+	// public patientForm = this.fb.group({
 		
-			});
+	// 	fullname: ["", Validators.required],
+	// 	national_code: ["", Validators.required],
+	// 	idcrd_number: ["", Validators.required],
+	// 	birt_hdate: ["", Validators.required],
+	// 	father_name: ["", Validators.required],
+	// 	birth_place: ["", Validators.required],
+	// 	living_place: ["", Validators.required],
+	// 	file_number: ["", Validators.required],
+	// 	gender: ["", Validators.required],
+	// 	phone: ["", Validators.required],
+	// 	mobile: ["", Validators.required],
+	// 	cancer_type: ["", Validators.required],
+	// 	marital_status: ["", Validators.required],
+	// 	doctor_name: ["", Validators.required],
+	// 	picture: ["", Validators.required],
+		
+	// });
 
 	response:any;
 	errorMessage: string;
 	patients: Patient[];
+	patient = new Patient();
+
 	
 
 	total: number;
@@ -50,11 +53,15 @@ export class PatientComponent {
 	per_page:number;
 	loading:boolean;
 
-	constructor (private patientService: PatientService, public fb: FormBuilder) {
+// public fb: FormBuilder
+	constructor (private patientService: PatientService, ) {
 
 	}
 
-	ngOnInit() { this.getPatients(); }
+	ngOnInit() { 
+		this.getPatients();
+		
+	}
 
 	getPatients() {
 		this.loading=true;
@@ -73,8 +80,14 @@ export class PatientComponent {
 
 	}
 
-	savePatient(event) {
-
-    console.log(this.patientForm.value);
+	savePatients () {
+	// let	patient = this.patientForm.value;
+    if (!patient) { return; }
+    this.patientService.savePatients(patient)
+                     .subscribe(
+                       serverresponse  => {this.patients.push(serverresponse),console.log(serverresponse);},
+                       error =>  this.errorMessage = <string>error);
   }
+
+
 }

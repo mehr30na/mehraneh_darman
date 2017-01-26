@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { Routing } from './app.route';
 import { HttpModule, JsonpModule } from '@angular/http';
-import { ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule }   from '@angular/forms';
 
 
 
@@ -18,7 +19,7 @@ import { SpinnerComponent } from './shared/spinner.component';
 
 
 @NgModule({
-  imports:      [ BrowserModule, RouterModule, Routing,HttpModule,JsonpModule,ReactiveFormsModule ],
+  imports:      [ BrowserModule, RouterModule, Routing,HttpModule,JsonpModule, FormsModule],
   declarations: [ AppComponent, HeaderComponent, SidebarComponent, PatientComponent,SpinnerComponent ],
   bootstrap:    [ AppComponent ],
   providers: 	[ PatientService ]

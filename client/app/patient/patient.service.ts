@@ -1,5 +1,6 @@
 import { Injectable }     from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
 import { Patient } from './Patient';
 import { Observable } from 'rxjs/Observable';
 
@@ -12,11 +13,26 @@ import 'rxjs/add/operator/catch';
 export class PatientService {
   private Url = 'http://localhost:8000/api/patient';  // URL to web API
   constructor (private http: Http) {}
+
+
   getPatients (): Observable<any>{
     return this.http.get(this.Url)
                     .map(this.extractData)
                     .catch(this.handleError);
   }
+
+  savePatients (patient: Patient): Observable<any> {
+    console.log(patient);
+    // console.log(JSON.stringify(patient));
+    // let data = JSON.stringify(patient);
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(this.Url, { patient }, options)
+                    .map(this.extractData)
+                    .catch(this.handleError);
+  }
+  
+
   private extractData(res: Response) {
     let response = res.json();
     return response;

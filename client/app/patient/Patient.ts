@@ -2,7 +2,7 @@ export class Patient {
 	
 		
 		public id: number;
-		public name: string;
+		public fullname: string;
 		public national_code: number;
 		public idcrd_number: number;
 		public birt_hdate: string;

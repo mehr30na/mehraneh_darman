@@ -73,14 +73,14 @@
         <h4 class="modal-title" id="myModalLabel">ایجاد پرونده جدید</h4>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" [formGroup]="patientForm" (ngSubmit)="savePatient($event)">
+        <form class="form-horizontal" >
           <fieldset>
             <div class="col-md-6">
               <!-- Text input-->
               <div class="form-group">
                 <label class="col-md-4 control-label" for="نام و نام خانوادگی">نام و نام خانوادگی</label>  
                 <div class="col-md-8">
-                  <input id="نام و نام خانوادگی" name="نام و نام خانوادگی" type="text" placeholder="نام و نام خانوادگی" class="form-control input-md"   formControlName="name">
+                  <input id="نام و نام خانوادگی" name="fullname" type="text" placeholder="نام و نام خانوادگی" class="form-control input-md"   [(ngModel)]="patient.fullname">
 
                 </div>
               </div>
@@ -89,7 +89,8 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="کد ملی">کد ملی</label>  
                 <div class="col-md-8">
-                  <input id="کد ملی" name="کد ملی" type="text" placeholder="کد ملی" class="form-control input-md"   formControlName="national_code">
+                  <input id="کد ملی" name="national_code" type="text" placeholder="کد ملی" class="form-control input-md"   
+                  [(ngModel)]="patient.national_code">
 
                 </div>
               </div>
@@ -98,7 +99,8 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="شماره شناسنامه">شماره شناسنامه</label>  
                 <div class="col-md-8">
-                  <input id="شماره شناسنامه" name="شماره شناسنامه" type="text" placeholder="شماره شناسنامه" class="form-control input-md" formControlName="idcrd_number" >
+                  <input id="شماره شناسنامه" name="idcrd_number" type="text" placeholder="شماره شناسنامه" class="form-control input-md" 
+                  [(ngModel)]="patient.idcrd_number" >
 
                 </div>
               </div>
@@ -107,7 +109,8 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="تاریخ تولد">تاریخ تولد</label>  
                 <div class="col-md-8">
-                  <input id="تاریخ تولد" name="تاریخ تولد" type="text" placeholder="تاریخ تولد" class="form-control input-md"  formControlName="birt_hdate">
+                  <input id="تاریخ تولد" name="birt_hdate" type="text" placeholder="تاریخ تولد" class="form-control input-md"  
+                  [(ngModel)]="patient.birt_hdate">
 
                 </div>
               </div>
@@ -116,7 +119,8 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="نام پدر">نام پدر</label>  
                 <div class="col-md-8">
-                  <input id="نام پدر" name="نام پدر" type="text" placeholder="نام پدر" class="form-control input-md"  formControlName="father_name">
+                  <input id="نام پدر" name="father_name" type="text" placeholder="نام پدر" class="form-control input-md"  
+                  [(ngModel)]="patient.father_name">
 
                 </div>
               </div>
@@ -125,7 +129,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="محل تولد">محل تولد</label>
                 <div class="col-md-8">
-                  <select id="محل تولد" name="محل تولد" class="form-control" formControlName="birth_place">
+                  <select id="محل تولد" name="birth_place" class="form-control" [(ngModel)]="patient.birth_place">
                     <option value="زنجان">زنجان</option>
                     <option value="ابهر">ابهر</option>
                     <option value="خرمدره">خرمدره</option>
@@ -154,7 +158,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="محل سکونت">محل سکونت</label>
                 <div class="col-md-8">
-                  <select id="محل سکونت" name="محل سکونت" class="form-control" formControlName="living_place">
+                  <select id="محل سکونت" name="living_place" class="form-control" [(ngModel)]="patient.living_place">
                     <option value="زنجان">زنجان</option>
                     <option value="ابهر">ابهر</option>
                     <option value="خرمدره">خرمدره</option>
@@ -185,7 +189,8 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="شماره پرونده">شماره پرونده</label>  
                 <div class="col-md-8">
-                  <input id="شماره پرونده" name="شماره پرونده" type="text" placeholder="شماره پرونده" class="form-control input-md"  formControlName="file_number">
+                  <input id="شماره پرونده" name="file_number" type="text" placeholder="شماره پرونده" class="form-control input-md"  
+                  [(ngModel)]="patient.file_number">
 
                 </div>
               </div>
@@ -195,12 +200,12 @@
                 <label class="col-md-4 control-label" for="جنسیت">جنسیت</label>
                 <div class="col-md-8"> 
                   <label class="radio-inline" for="جنسیت-0">
-                    <input type="radio" name="gender" id="جنسیت-0" value="m" checked="checked" formControlName="gender">
+                    <input type="radio" name="gender" id="جنسیت-0" value="m" checked="checked" [(ngModel)]="patient.gender">
                     مرد
                   </label> 
                   <label class="radio-inline" for="جنسیت-1">
                     <input type="radio" name="gender" id="جنسیت-1" value="f" 
-                    formControlName="gender">
+                    [(ngModel)]="patient.gender">
                     زن
                   </label>
                 </div>
@@ -210,7 +215,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="شماره تلفن">شماره تلفن</label>  
                 <div class="col-md-8">
-                  <input id="شماره تلفن" name="شماره تلفن" type="text" placeholder="شماره تلفن" class="form-control input-md"  formControlName="phone">
+                  <input id="شماره تلفن" name="phone" type="text" placeholder="شماره تلفن" class="form-control input-md"  [(ngModel)]="patient.phone">
 
                 </div>
               </div>
@@ -219,7 +224,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="شماره همراه">شماره همراه</label>  
                 <div class="col-md-8">
-                  <input id="شماره همراه" name="شماره همراه" type="text" placeholder="شماره همراه" class="form-control input-md"  formControlName="mobile">
+                  <input id="شماره همراه" name="mobile" type="text" placeholder="شماره همراه" class="form-control input-md"  [(ngModel)]="patient.mobile">
 
                 </div>
               </div>
@@ -228,7 +233,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="نوع بیماری">نوع بیماری</label>  
                 <div class="col-md-8">
-                  <input id="نوع بیماری" name="نوع بیماری" type="text" placeholder="نوع بیماری" class="form-control input-md"  formControlName="cancer_type">
+                  <input id="نوع بیماری" name="cancer_type" type="text" placeholder="نوع بیماری" class="form-control input-md"  [(ngModel)]="patient.cancer_type">
 
                 </div>
               </div>
@@ -239,12 +244,12 @@
                 <div class="col-md-8"> 
                   <label class="radio-inline" for="وضعیت تاهل-0">
                     <input type="radio" name="marital_status" id="وضعیت تاهل-0" value="s" checked="checked"
-                    formControlName="marital_status">
+                    [(ngModel)]="patient.marital_status">
                     مجرد
                   </label> 
                   <label class="radio-inline" for="وضعیت تاهل-1">
                     <input type="radio" name="marital_status" id="وضعیت تاهل-1" value="m" 
-                    formControlName="marital_status">
+                    [(ngModel)]="patient.marital_status">
                     متاهل
                   </label>
                 </div>
@@ -254,7 +259,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="نام دکتر">نام دکتر</label>  
                 <div class="col-md-8">
-                  <input id="نام دکتر" name="نام دکتر" type="text" placeholder="نام دکتر" class="form-control input-md" formControlName="doctor_name" >
+                  <input id="نام دکتر" name="doctor_name" type="text" placeholder="نام دکتر" class="form-control input-md" [(ngModel)]="patient.doctor_name" >
 
                 </div>
               </div>
@@ -263,7 +268,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label" for="تصویر">تصویر</label>
                 <div class="col-md-8">
-                  <input id="تصویر" name="تصویر" class="input-file" type="file" formControlName="picture">
+                  <input id="تصویر" name="picture" class="input-file" type="file" [(ngModel)]="patient.picture">
                 </div>
               </div>
 
@@ -271,11 +276,12 @@
           </fieldset>
           <hr>
           <button type="button" class="btn btn-default" data-dismiss="modal">بستن</button>
-          <button type="submit" class="btn btn-success">ذخیره</button>
+          <button type="button" class="btn btn-success" (click)="savePatients()">ذخیره</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- /MMMMMMMMMOOOOOOOOOOOOOODAAAAAAAAAAAAAAAAAAALLLLLLLLLLLLLLLLLLLLLLLLLLLL -->
