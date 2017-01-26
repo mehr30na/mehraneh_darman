@@ -1,4 +1,4 @@
-<spinner></spinner>
+<spinner [visible]="loading"></spinner>
 <div class="panel panel-default panel-table">
   <div class="panel-heading">
     <div class="row">
@@ -6,7 +6,7 @@
         <h3 class="panel-title">لیست پرونده ها</h3>
       </div>
       <div class="col col-xs-6 text-right">
-        <button type="button" class="btn btn-sm btn-primary btn-create">ایجاد پرونده جدید</button>
+        <button type="button" class="btn btn-sm btn-primary btn-create" data-toggle="modal" data-target=".bs-example-modal-lg">ایجاد پرونده جدید</button>
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@
           <td>{{patient.file_number}}</td>
           <td>{{patient.doctor_name}}</td>
           <td align="center">
-          <a class="btn btn-default"><em class="glyphicon glyphicon-pencil"></em></a>
+            <a class="btn btn-default"><em class="glyphicon glyphicon-pencil"></em></a>
             <a class="btn btn-danger"><em class="glyphicon glyphicon-trash"></em></a>
           </td>
         </tr>
@@ -61,3 +61,221 @@
     </div>
   </div>
 </div>
+
+
+<!-- MMMMMMMMMOOOOOOOOOOOOOODAAAAAAAAAAAAAAAAAAALLLLLLLLLLLLLLLLLLLLLLLLLLLL -->
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">ایجاد پرونده جدید</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" [formGroup]="patientForm" (ngSubmit)="savePatient($event)">
+          <fieldset>
+            <div class="col-md-6">
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="نام و نام خانوادگی">نام و نام خانوادگی</label>  
+                <div class="col-md-8">
+                  <input id="نام و نام خانوادگی" name="نام و نام خانوادگی" type="text" placeholder="نام و نام خانوادگی" class="form-control input-md"   formControlName="name">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="کد ملی">کد ملی</label>  
+                <div class="col-md-8">
+                  <input id="کد ملی" name="کد ملی" type="text" placeholder="کد ملی" class="form-control input-md"   formControlName="national_code">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="شماره شناسنامه">شماره شناسنامه</label>  
+                <div class="col-md-8">
+                  <input id="شماره شناسنامه" name="شماره شناسنامه" type="text" placeholder="شماره شناسنامه" class="form-control input-md" formControlName="idcrd_number" >
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="تاریخ تولد">تاریخ تولد</label>  
+                <div class="col-md-8">
+                  <input id="تاریخ تولد" name="تاریخ تولد" type="text" placeholder="تاریخ تولد" class="form-control input-md"  formControlName="birt_hdate">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="نام پدر">نام پدر</label>  
+                <div class="col-md-8">
+                  <input id="نام پدر" name="نام پدر" type="text" placeholder="نام پدر" class="form-control input-md"  formControlName="father_name">
+
+                </div>
+              </div>
+
+              <!-- Select Basic -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="محل تولد">محل تولد</label>
+                <div class="col-md-8">
+                  <select id="محل تولد" name="محل تولد" class="form-control" formControlName="birth_place">
+                    <option value="زنجان">زنجان</option>
+                    <option value="ابهر">ابهر</option>
+                    <option value="خرمدره">خرمدره</option>
+                    <option value="قیدار">قیدار</option>
+                    <option value="هیدج">هیدج</option>
+                    <option value="صائین‌قلعه">صائین‌قلعه</option>
+                    <option value="سلطانیه">سلطانیه</option>
+                    <option value="آب بر">آب بر</option>
+                    <option value="سجاس">سجاس</option>
+                    <option value="سهرورد">سهرورد</option>
+                    <option value="زرین رود">زرین رود</option>
+                    <option value="ماه‌نشان">ماه‌نشان</option>
+                    <option value="کرسف">کرسف</option>
+                    <option value="گرماب">گرماب</option>
+                    <option value="دندی">دندی</option>
+                    <option value="نوربهار">نوربهار</option>
+                    <option value="زرین‌آباد">زرین‌آباد</option>
+                    <option value="ارمغان خانه">ارمغان خانه</option>
+                    <option value="چورزق">چورزق</option>
+                    <option value="حلب">حلب</option>
+                    <option value="نیک پی">نیک پی</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Select Basic -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="محل سکونت">محل سکونت</label>
+                <div class="col-md-8">
+                  <select id="محل سکونت" name="محل سکونت" class="form-control" formControlName="living_place">
+                    <option value="زنجان">زنجان</option>
+                    <option value="ابهر">ابهر</option>
+                    <option value="خرمدره">خرمدره</option>
+                    <option value="قیدار">قیدار</option>
+                    <option value="هیدج">هیدج</option>
+                    <option value="صائین‌قلعه">صائین‌قلعه</option>
+                    <option value="سلطانیه">سلطانیه</option>
+                    <option value="آب بر">آب بر</option>
+                    <option value="سجاس">سجاس</option>
+                    <option value="سهرورد">سهرورد</option>
+                    <option value="زرین رود">زرین رود</option>
+                    <option value="ماه‌نشان">ماه‌نشان</option>
+                    <option value="کرسف">کرسف</option>
+                    <option value="گرماب">گرماب</option>
+                    <option value="دندی">دندی</option>
+                    <option value="نوربهار">نوربهار</option>
+                    <option value="زرین‌آباد">زرین‌آباد</option>
+                    <option value="ارمغان خانه">ارمغان خانه</option>
+                    <option value="چورزق">چورزق</option>
+                    <option value="حلب">حلب</option>
+                    <option value="نیک پی">نیک پی</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">        
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="شماره پرونده">شماره پرونده</label>  
+                <div class="col-md-8">
+                  <input id="شماره پرونده" name="شماره پرونده" type="text" placeholder="شماره پرونده" class="form-control input-md"  formControlName="file_number">
+
+                </div>
+              </div>
+
+              <!-- Multiple Radios (inline) -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="جنسیت">جنسیت</label>
+                <div class="col-md-8"> 
+                  <label class="radio-inline" for="جنسیت-0">
+                    <input type="radio" name="gender" id="جنسیت-0" value="m" checked="checked" formControlName="gender">
+                    مرد
+                  </label> 
+                  <label class="radio-inline" for="جنسیت-1">
+                    <input type="radio" name="gender" id="جنسیت-1" value="f" 
+                    formControlName="gender">
+                    زن
+                  </label>
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="شماره تلفن">شماره تلفن</label>  
+                <div class="col-md-8">
+                  <input id="شماره تلفن" name="شماره تلفن" type="text" placeholder="شماره تلفن" class="form-control input-md"  formControlName="phone">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="شماره همراه">شماره همراه</label>  
+                <div class="col-md-8">
+                  <input id="شماره همراه" name="شماره همراه" type="text" placeholder="شماره همراه" class="form-control input-md"  formControlName="mobile">
+
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="نوع بیماری">نوع بیماری</label>  
+                <div class="col-md-8">
+                  <input id="نوع بیماری" name="نوع بیماری" type="text" placeholder="نوع بیماری" class="form-control input-md"  formControlName="cancer_type">
+
+                </div>
+              </div>
+
+              <!-- Multiple Radios (inline) -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="وضعیت تاهل">وضعیت تاهل</label>
+                <div class="col-md-8"> 
+                  <label class="radio-inline" for="وضعیت تاهل-0">
+                    <input type="radio" name="marital_status" id="وضعیت تاهل-0" value="s" checked="checked"
+                    formControlName="marital_status">
+                    مجرد
+                  </label> 
+                  <label class="radio-inline" for="وضعیت تاهل-1">
+                    <input type="radio" name="marital_status" id="وضعیت تاهل-1" value="m" 
+                    formControlName="marital_status">
+                    متاهل
+                  </label>
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="نام دکتر">نام دکتر</label>  
+                <div class="col-md-8">
+                  <input id="نام دکتر" name="نام دکتر" type="text" placeholder="نام دکتر" class="form-control input-md" formControlName="doctor_name" >
+
+                </div>
+              </div>
+
+              <!-- File Button --> 
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="تصویر">تصویر</label>
+                <div class="col-md-8">
+                  <input id="تصویر" name="تصویر" class="input-file" type="file" formControlName="picture">
+                </div>
+              </div>
+
+            </div>
+          </fieldset>
+          <hr>
+          <button type="button" class="btn btn-default" data-dismiss="modal">بستن</button>
+          <button type="submit" class="btn btn-success">ذخیره</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /MMMMMMMMMOOOOOOOOOOOOOODAAAAAAAAAAAAAAAAAAALLLLLLLLLLLLLLLLLLLLLLLLLLLL -->

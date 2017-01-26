@@ -1,0 +1,56 @@
+@font-face {
+  font-family: Vazir;
+  src: url('Vazir.eot');
+  src: url('Vazir.eot?#iefix') format('embedded-opentype'),
+       url('Vazir.woff') format('woff'),
+       url('Vazir.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('Vazir-Bold.eot');
+  src: url('Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+       url('Vazir-Bold.woff') format('woff'),
+       url('Vazir-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('Vazir-Light.eot');
+  src: url('Vazir-Light.eot?#iefix') format('embedded-opentype'),
+       url('Vazir-Light.woff') format('woff'),
+       url('Vazir-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+* {
+  
+  font-family: Vazir !important;
+}
+
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+.loading {
+  width: 100%;
+  background: none repeat scroll 0 0 black;
+  position: fixed;
+  display: block;
+  opacity: 0.2;
+  z-index: 1000001; // or, higher
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.spinner {
+  margin-top:20%;
+  position: fixed;
+  z-index: 1000002;
+  color:white;
+}

@@ -16,7 +16,8 @@ class PatientController extends Controller
      */
     public function index()
     {
-        return Patient::paginate(10);
+        // return Patient::paginate(10);
+        return Patient::all();
     }
 
     /**
