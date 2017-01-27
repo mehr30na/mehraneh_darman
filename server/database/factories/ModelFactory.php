@@ -24,7 +24,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Patient::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'fullname' => $faker->name,
         'national_code' => $faker->numberBetween(4000000,5000000),
         'idcrd_number' => $faker->numberBetween(4000000,5000000),
         'birt_hdate' => $faker->date($format = 'Y-m-d', $max = '-20 years'),

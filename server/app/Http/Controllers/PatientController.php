@@ -38,6 +38,7 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         //
+       // return $request->all();
        return Patient::create($request->all());
     }
 
