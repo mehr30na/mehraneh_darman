@@ -87,4 +87,11 @@ class PatientController extends Controller
         //
         return Patient::destroy($id);
     }
+
+    public function search($term)
+    {
+        //
+        // return Patient::destroy($id);
+        return $term;
+    }
 }

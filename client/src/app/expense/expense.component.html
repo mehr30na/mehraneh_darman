@@ -1,0 +1,81 @@
+<app-spinner [visible]="loading"></app-spinner>
+<form class="form-horizontal" (ngSubmit)="saveExpense(patient.id,$event);expenseForm.reset();"  #expenseForm="ngForm">
+  <fieldset>
+
+    <!-- Form Name -->
+    <legend>ثبت هزينه</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="شماره پرونده بيمار">شماره پرونده بيمار</label>  
+      <div class="col-md-4">
+        <input id="شماره پرونده بيمار" name="patient_fid" type="text" placeholder="شماره پرونده بيمار" class="form-control input-md" required 
+        [(ngModel)]="expense.patient_fid" >
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="شماره نامه">شماره نامه</label>  
+      <div class="col-md-4">
+        <input id="شماره نامه" name="letter_number" type="text" placeholder="شماره نامه" class="form-control input-md" required
+        [(ngModel)]="expense.letter_number">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="هزينه واقعي">هزينه واقعي</label>  
+      <div class="col-md-4">
+        <input id="هزينه واقعي" name="actual_cost" type="text" placeholder="هزينه واقعي" class="form-control input-md" required
+        [(ngModel)]="expense.actual_cost">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="هزينه كمك شده">هزينه كمك شده</label>  
+      <div class="col-md-4">
+        <input id="هزينه كمك شده" name="donation" type="text" placeholder="هزينه كمك شده" class="form-control input-md"
+        [(ngModel)]="expense.donation">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="تاريخ">تاريخ</label>  
+      <div class="col-md-4">
+        <input id="تاريخ" name="date" type="text" placeholder="تاريخ" class="form-control input-md" required
+        [(ngModel)]="expense.date">
+
+      </div>
+    </div>
+
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="نوع هزينه">نوع هزينه</label>
+      <div class="col-md-4">
+        <select id="نوع هزينه" name="cost_type" class="form-control"
+        [(ngModel)]="expense.cost_type">
+          <option value="1">Option one</option>
+          <option value="2">Option two</option>
+        </select>
+      </div>
+    </div>
+
+  </fieldset>
+
+  <!-- Button (Double) -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="ثبت">ثبت</label>
+    <div class="col-md-8">
+      <button type="submit" id="ثبت" name="ثبت" class="btn btn-success">ثبت</button>
+      <button type="reset" id="پاك كردن" name="پاك كردن" class="btn btn-warning">پاك كردن</button>
+    </div>
+  </div>
+
+</form>

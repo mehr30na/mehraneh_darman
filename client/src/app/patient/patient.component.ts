@@ -13,6 +13,8 @@ export class PatientComponent implements OnInit {
   private patients:Patient[];
   private errorMessage:string;
   private patient = new Patient();
+  private modal_title:string;
+  private searchTerm:string = "";
 
 
   constructor(private patientService: PatientService) { }
@@ -62,12 +64,14 @@ export class PatientComponent implements OnInit {
   // console.log(this.patient);
   if (!this.patient) { return; }
   if(!id){
+    this.modal_title = "ايجاد پرونده جديد";
     this.patientService.savePatients(this.patient)
       .subscribe(
         serverresponse  => {this.patients.push(serverresponse); $('.bs-example-modal-lg').modal('hide');},
         error =>  this.errorMessage = <string>error);
   }
   else {
+    this.modal_title = "ويرايش پرونده جديد";
     this.patientService.updatePatients(id,this.patient)
       .subscribe(
         serverresponse  => {this.getPatients();$('.bs-example-modal-lg').modal('hide');},
@@ -87,6 +91,23 @@ export class PatientComponent implements OnInit {
     else {
       return;
     }
+
+  }
+
+  search(){
+    this.loading=true;
+    this.patientService.searchPatient(this.searchTerm).subscribe(
+      serverresponse => {
+        // this.patients = <Patient[]>serverresponse.data,
+        this.patients = <Patient[]>serverresponse,
+          //this.total = <number>serverresponse.total,
+          // console.log(this.patients);
+          this.loading=false;
+
+      },
+      error => {this.errorMessage = <string>error}
+
+    );
 
   }
 

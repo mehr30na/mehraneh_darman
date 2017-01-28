@@ -48,6 +48,13 @@ export class PatientService {
       .catch(this.handleError);
   }
 
+  searchPatient(term): Observable<any> {
+
+    return this.http.get(this.Url+"/"+term)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
 
   private extractData(res: Response) {
     let response = res.json();

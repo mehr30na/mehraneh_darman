@@ -20,6 +20,7 @@
   width: 100%;
 }
 
+
 .spinner {
   margin-top:20%;
   position: fixed;
@@ -27,6 +28,6 @@
   color:white;
 }
 
-body span * {
-  font-family: Vazir;
+body div table{
+  font-family: Vazir !important;
 }

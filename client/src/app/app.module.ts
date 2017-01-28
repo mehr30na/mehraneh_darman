@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PatientComponent } from './patient/patient.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { ExpenseComponent } from './expense/expense.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     HeaderComponent,
     SidebarComponent,
     PatientComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ExpenseComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,10 @@
       <div class="col col-xs-6 text-right">
         <button type="button" class="btn btn-sm btn-primary btn-create" data-toggle="modal" data-target=".bs-example-modal-lg">ایجاد پرونده جدید</button>
       </div>
+
+      <div><input type="text" class="form-group" [(ngModel)]="searchTerm" name="searchTerm"></div>
+      <button class="btn btn-default"></button>
+
     </div>
   </div>
   <div class="panel-body text-center">
@@ -70,7 +74,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">ایجاد پرونده جدید</h4>
+        <h4 class="modal-title" id="myModalLabel">{{modal_title}}</h4>
       </div>
       <div class="modal-body">
         <form class="form-horizontal" (ngSubmit)="savePatients(patient.id,$event);patientForm.reset();"  #patientForm="ngForm">
@@ -81,7 +85,7 @@
                 <label class="col-md-4 control-label" for="نام و نام خانوادگی">نام و نام خانوادگی</label>
                 <div class="col-md-8">
                   <input id="نام و نام خانوادگی" name="fullname"  type="text" placeholder="نام و نام خانوادگی" class="form-control input-md"
-                         [(ngModel)]="patient.fullname" [value]="patient.fullname">
+                         [(ngModel)]="patient.fullname">
 
                 </div>
               </div>

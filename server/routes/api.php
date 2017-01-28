@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 //Route::get('/user', function (Request $request) {
 //    return $request->user();
 //})->middleware('auth:api');
-
+Route::get('/patient/{term}','PatientController@search');
 Route::resource('/patient', 'PatientController', ['except' => ['create', 'edit']]);
+
 Route::resource('/expense', 'ExpenseController', ['except' => ['create', 'edit']]);
