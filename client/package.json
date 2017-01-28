@@ -34,6 +34,7 @@
     "bootstrap": "^3.3.7",
     "bootstrap-rtl": "^3.3.4",
     "codelyzer": "~2.0.0-beta.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.0",
     "font-awesome": "^4.7.0",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",

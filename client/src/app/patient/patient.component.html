@@ -9,8 +9,8 @@
         <button type="button" class="btn btn-sm btn-primary btn-create" data-toggle="modal" data-target=".bs-example-modal-lg">ایجاد پرونده جدید</button>
       </div>
 
-      <div><input type="text" class="form-group" [(ngModel)]="searchTerm" name="searchTerm"></div>
-      <button class="btn btn-default"></button>
+      <div><input type="text" class="form-group" [(ngModel)]="searchTerm" name="searchTerm" (keyup)="search()"></div>
+      <!--<button class="btn btn-default"></button>-->
 
     </div>
   </div>

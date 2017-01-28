@@ -1,5 +1,5 @@
 <app-spinner [visible]="loading"></app-spinner>
-<form class="form-horizontal" (ngSubmit)="saveExpense(patient.id,$event);expenseForm.reset();"  #expenseForm="ngForm">
+<form class="form-horizontal" (ngSubmit)="saveExpense($event);expenseForm.reset();"  #expenseForm="ngForm">
   <fieldset>
 
     <!-- Form Name -->
@@ -7,17 +7,17 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="شماره پرونده بيمار">شماره پرونده بيمار</label>  
+      <label class="col-md-4 control-label" for="شماره پرونده بيمار">شماره پرونده بيمار</label>
       <div class="col-md-4">
-        <input id="شماره پرونده بيمار" name="patient_fid" type="text" placeholder="شماره پرونده بيمار" class="form-control input-md" required 
-        [(ngModel)]="expense.patient_fid" >
+        <input id="شماره پرونده بيمار" name="patient_id" type="text" placeholder="شماره پرونده بيمار" class="form-control input-md" required
+        [(ngModel)]="expense.patient_id" >
 
       </div>
     </div>
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="شماره نامه">شماره نامه</label>  
+      <label class="col-md-4 control-label" for="شماره نامه">شماره نامه</label>
       <div class="col-md-4">
         <input id="شماره نامه" name="letter_number" type="text" placeholder="شماره نامه" class="form-control input-md" required
         [(ngModel)]="expense.letter_number">
@@ -27,7 +27,7 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="هزينه واقعي">هزينه واقعي</label>  
+      <label class="col-md-4 control-label" for="هزينه واقعي">هزينه واقعي</label>
       <div class="col-md-4">
         <input id="هزينه واقعي" name="actual_cost" type="text" placeholder="هزينه واقعي" class="form-control input-md" required
         [(ngModel)]="expense.actual_cost">
@@ -37,7 +37,7 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="هزينه كمك شده">هزينه كمك شده</label>  
+      <label class="col-md-4 control-label" for="هزينه كمك شده">هزينه كمك شده</label>
       <div class="col-md-4">
         <input id="هزينه كمك شده" name="donation" type="text" placeholder="هزينه كمك شده" class="form-control input-md"
         [(ngModel)]="expense.donation">
@@ -47,7 +47,7 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="تاريخ">تاريخ</label>  
+      <label class="col-md-4 control-label" for="تاريخ">تاريخ</label>
       <div class="col-md-4">
         <input id="تاريخ" name="date" type="text" placeholder="تاريخ" class="form-control input-md" required
         [(ngModel)]="expense.date">

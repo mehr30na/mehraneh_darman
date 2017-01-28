@@ -50,7 +50,7 @@ export class PatientService {
 
   searchPatient(term): Observable<any> {
 
-    return this.http.get(this.Url+"/"+term)
+    return this.http.get(this.Url+"/search/"+term)
       .map(this.extractData)
       .catch(this.handleError);
   }

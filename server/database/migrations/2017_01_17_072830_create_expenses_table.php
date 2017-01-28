@@ -20,15 +20,15 @@ class CreateExpensesTable extends Migration
             $table->integer('actual_cost');
             $table->integer('donation');
             $table->string('date');
-            $table->integer('cost_type');
-            $table->integer('patient_fid')->unsigned();
+            $table->string('cost_type');
+            $table->integer('patient_id')->unsigned();
 
             $table->timestamps();
         });
 
         Schema::table('expenses', function (Blueprint $table) {
 
-            $table->foreign('patient_fid')->references('file_number')->on('patients')->onDelete('cascade');
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
 
         });
     }

@@ -96,6 +96,7 @@ export class PatientComponent implements OnInit {
 
   search(){
     this.loading=true;
+    console.log(this.searchTerm);
     this.patientService.searchPatient(this.searchTerm).subscribe(
       serverresponse => {
         // this.patients = <Patient[]>serverresponse.data,

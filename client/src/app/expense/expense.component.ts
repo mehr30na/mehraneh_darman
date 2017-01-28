@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Expense} from "./expense";
+import { ExpenseService } from './expense.service'
 
 @Component({
   selector: 'app-expense',
@@ -6,31 +8,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expense.component.css']
 })
 export class ExpenseComponent implements OnInit {
+  private modal_title:string;
+  private expense = new Expense();
+  private expenses:Expense[];
+  private errorMessage:string;
 
-  constructor() { }
+  constructor(private expenseService:ExpenseService) { }
 
   ngOnInit() {
   }
 
-  saveExpense (id,event:Event) {
-
+  saveExpense (event:Event) {
+  // console.log(this.expense);
   event.preventDefault();
   // console.log(this.patient);
   if (!this.expense) { return; }
-  if(!id){
+  // if(!id){
     this.modal_title = "ايجاد پرونده جديد";
-    this.patientService.savePatients(this.patient)
+    this.expenseService.saveExpenses(this.expense)
       .subscribe(
-        serverresponse  => {this.patients.push(serverresponse); $('.bs-example-modal-lg').modal('hide');},
+        serverresponse  => {},
         error =>  this.errorMessage = <string>error);
-  }
-  else {
-    this.modal_title = "ويرايش پرونده جديد";
-    this.patientService.updatePatients(id,this.patient)
-      .subscribe(
-        serverresponse  => {this.getPatients();$('.bs-example-modal-lg').modal('hide');},
-        error =>  this.errorMessage = <string>error);
-  }
+  // }
+  // else {
+  //   this.modal_title = "ويرايش پرونده جديد";
+  //   this.expenseService.updateExpenses(id,this.expense)
+  //     .subscribe(
+  //       serverresponse  => {},
+  //       error =>  this.errorMessage = <string>error);
+  // }
 
 }
 

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { PatientService } from './patient/patient.service';
+import { ExpenseService } from './expense/expense.service';
 
 
 import { AppComponent } from './app.component';
@@ -28,7 +29,7 @@ import { ExpenseComponent } from './expense/expense.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ PatientService ],
+  providers: [ PatientService , ExpenseService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
