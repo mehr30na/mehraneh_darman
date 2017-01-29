@@ -13,6 +13,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PatientComponent } from './patient/patient.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { ExpenseComponent } from './expense/expense.component';
+import {PersianCalendarService} from "./shared/persinDate/PersianCalendarService";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { ExpenseComponent } from './expense/expense.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ PatientService , ExpenseService ],
+  providers: [ PatientService , ExpenseService , PersianCalendarService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

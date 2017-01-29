@@ -9,7 +9,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="شماره پرونده بيمار">شماره پرونده بيمار</label>
       <div class="col-md-4">
-        <input id="شماره پرونده بيمار" name="patient_id" type="text" placeholder="شماره پرونده بيمار" class="form-control input-md" required
+        <input id="شماره پرونده بيمار" name="patient_id" type="number" placeholder="شماره پرونده بيمار" class="form-control input-md" required
         [(ngModel)]="expense.patient_id" >
 
       </div>
@@ -19,7 +19,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="شماره نامه">شماره نامه</label>
       <div class="col-md-4">
-        <input id="شماره نامه" name="letter_number" type="text" placeholder="شماره نامه" class="form-control input-md" required
+        <input id="شماره نامه" name="letter_number" type="number" placeholder="شماره نامه" class="form-control input-md" required
         [(ngModel)]="expense.letter_number">
 
       </div>
@@ -29,7 +29,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="هزينه واقعي">هزينه واقعي</label>
       <div class="col-md-4">
-        <input id="هزينه واقعي" name="actual_cost" type="text" placeholder="هزينه واقعي" class="form-control input-md" required
+        <input id="هزينه واقعي" name="actual_cost" type="number" placeholder="هزينه واقعي" class="form-control input-md" required
         [(ngModel)]="expense.actual_cost">
 
       </div>
@@ -39,7 +39,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="هزينه كمك شده">هزينه كمك شده</label>
       <div class="col-md-4">
-        <input id="هزينه كمك شده" name="donation" type="text" placeholder="هزينه كمك شده" class="form-control input-md"
+        <input id="هزينه كمك شده" name="donation" type="number" placeholder="هزينه كمك شده" class="form-control input-md"
         [(ngModel)]="expense.donation">
 
       </div>
@@ -49,8 +49,8 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="تاريخ">تاريخ</label>
       <div class="col-md-4">
-        <input id="تاريخ" name="date" type="text" placeholder="تاريخ" class="form-control input-md" required
-        [(ngModel)]="expense.date">
+        <input id="تاريخ" name="date" type="text" placeholder="YYYY/MM/DD" class="form-control input-md" required
+        [(ngModel)]="expense.date" pattern="\d{4}/\d{2}/\d{2}">
 
       </div>
     </div>
@@ -60,19 +60,18 @@
       <label class="col-md-4 control-label" for="نوع هزينه">نوع هزينه</label>
       <div class="col-md-4">
         <select id="نوع هزينه" name="cost_type" class="form-control"
-        [(ngModel)]="expense.cost_type">
-          <option value="1">Option one</option>
-          <option value="2">Option two</option>
+        [(ngModel)]="expense.cost_type" required>
+          <option value="1">رادیوتراپی</option>
+          <option value="2">شیمی درمانی</option>
+          <option value="2">دارو</option>
+          <option value="2">متفرقه</option>
         </select>
       </div>
     </div>
-
   </fieldset>
-
   <!-- Button (Double) -->
   <div class="form-group">
-    <label class="col-md-4 control-label" for="ثبت">ثبت</label>
-    <div class="col-md-8">
+    <div class="row">
       <button type="submit" id="ثبت" name="ثبت" class="btn btn-success">ثبت</button>
       <button type="reset" id="پاك كردن" name="پاك كردن" class="btn btn-warning">پاك كردن</button>
     </div>

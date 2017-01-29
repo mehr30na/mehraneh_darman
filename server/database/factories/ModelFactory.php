@@ -49,7 +49,7 @@ $factory->define(App\Expense::class, function (Faker\Generator $faker) {
         'donation' => $faker->numberBetween(4000000,5000000),
         'date' => $faker->date($format = 'Y-m-d', $max = '-10 days'),
         'patient_id' => $faker->numberBetween(1,50),
-        'cost_type_id' => $faker->numberBetween(1,4),
+        'cost_type' => $faker->randomElement($array = array ('رادیوتراپی','شیمی درمانی','دارو','متفرقه')),
         
     ];
 });

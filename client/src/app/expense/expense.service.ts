@@ -9,7 +9,7 @@ export class ExpenseService {
 
   constructor(private http: Http) { }
 
-  private Url = 'http://localhost:8000/api/patient';  // URL to web API
+  private Url = 'http://localhost:8000/api/expense';  // URL to web API
 
   saveExpenses (expense: Expense): Observable<any> {
     console.log(expense);

@@ -92,6 +92,18 @@ class PatientController extends Controller
     {
         //
         // return Patient::destroy($id);
-        return $term;
+        //return $term;
+        return Patient::    where('fullname', 'LIKE', '%'. $term .'%')
+                        ->orWhere('national_code', 'LIKE', '%'. $term .'%')
+                        ->orWhere('idcrd_number', 'LIKE', '%'. $term .'%')
+                        ->orWhere('birt_hdate', 'LIKE', '%'. $term .'%')
+                        ->orWhere('father_name', 'LIKE', '%'. $term .'%')
+                        ->orWhere('birth_place', 'LIKE', '%'. $term .'%')
+                        ->orWhere('living_place', 'LIKE', '%'. $term .'%')
+                        ->orWhere('file_number', 'LIKE', '%'. $term .'%')
+                        ->orWhere('phone', 'LIKE', '%'. $term .'%')
+                        ->orWhere('mobile', 'LIKE', '%'. $term .'%')
+                        ->orWhere('doctor_name', 'LIKE', '%'. $term .'%')
+                        ->get();
     }
 }
