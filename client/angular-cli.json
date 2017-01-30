@@ -8,8 +8,7 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
-        "favicon.ico"
+       "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -18,7 +17,7 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "../src/assets/css/styles.css",
+        "../src/styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.css",
         "../node_modules/bootstrap-rtl/dist/css/bootstrap-rtl.css",
         "../node_modules/font-awesome/css/font-awesome.css"
@@ -36,7 +35,7 @@
     }
   ],
   "addons": [
-    "../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"
+    
    
   ],
   "e2e": {

@@ -13,8 +13,8 @@ export class ExpenseComponent implements OnInit {
   private expense = new Expense();
   private expenses:Expense[];
   private errorMessage:string;
-  today: Date = new Date();
-  farsiDate: string = null;
+
+  
 
   constructor(private expenseService:ExpenseService, public persianCalendarService: PersianCalendarService) {
 
@@ -23,11 +23,7 @@ export class ExpenseComponent implements OnInit {
   ngOnInit() {
   }
 
-  FaDate(date) {
-    var ConvertedDate = this.persianCalendarService.PersianCalendar(date);
-    this.farsiDate = ConvertedDate;
-
-  }
+  
 
   saveExpense (event:Event) {
   // console.log(this.expense);
@@ -50,6 +46,31 @@ export class ExpenseComponent implements OnInit {
   // }
 
 }
+
+  fruitName: string;
+  fruits: any[] = [
+    {
+      id: 1,
+      name: "Apple",
+      searchText: "apple"
+    },
+    {
+      id: 2,
+      name: "Orange",
+      searchText: "orange"
+    },
+    {
+      id: 3,
+      name: "Banana",
+      searchText: "banana"
+    }
+  ];
+
+  selectedFruit: any = this.fruits[0];
+
+  public fruitSelected(fruit) {
+    this.fruitName = fruit ? fruit.id : 'none';
+  }
 
 
 

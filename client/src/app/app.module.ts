@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { PatientService } from './patient/patient.service';
 import { ExpenseService } from './expense/expense.service';
+import { Typeahead } from 'ng2-typeahead';
 
 
 import { AppComponent } from './app.component';
@@ -22,7 +23,8 @@ import {PersianCalendarService} from "./shared/persinDate/PersianCalendarService
     SidebarComponent,
     PatientComponent,
     SpinnerComponent,
-    ExpenseComponent
+    ExpenseComponent,
+    Typeahead 
   ],
   imports: [
     BrowserModule,
