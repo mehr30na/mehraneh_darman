@@ -24,7 +24,7 @@ import {PersianCalendarService} from "./shared/persinDate/PersianCalendarService
     PatientComponent,
     SpinnerComponent,
     ExpenseComponent,
-    Typeahead 
+    Typeahead
   ],
   imports: [
     BrowserModule,
