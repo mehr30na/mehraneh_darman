@@ -85,4 +85,17 @@ class ExpenseController extends Controller
         //
         return Expense::destroy($id);
     }
+
+
+
+
+    public function reportDate($s,$e){
+
+        $sdate = str_replace("-", "/", $s);
+        $edate = str_replace("-", "/", $e);
+
+        return [$sdate,$edate];
+    }
+
+
 }

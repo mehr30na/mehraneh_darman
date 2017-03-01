@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { PatientService } from './patient/patient.service';
 import { ExpenseService } from './expense/expense.service';
+import { ReportService } from './report/report.service';
 
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { PatientComponent } from './patient/patient.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { ExpenseComponent } from './expense/expense.component';
 import {PersianCalendarService} from "./shared/persinDate/PersianCalendarService";
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import {PersianCalendarService} from "./shared/persinDate/PersianCalendarService
     PatientComponent,
     SpinnerComponent,
     ExpenseComponent,
-    
+    ReportComponent 
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import {PersianCalendarService} from "./shared/persinDate/PersianCalendarService
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ PatientService , ExpenseService , PersianCalendarService ],
+  providers: [ PatientService , ExpenseService , PersianCalendarService, ReportService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

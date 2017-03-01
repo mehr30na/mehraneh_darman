@@ -1,31 +1,28 @@
 import { Injectable } from '@angular/core';
 import {  Http, Response} from "@angular/http";
-import {  Expense} from "./expense";
+import {RepoDate} from './repoDate';
 import {  Observable} from "rxjs/Rx";
 
 
 @Injectable()
-export class ExpenseService {
+export class ReportService {
+	repoDate:RepoDate;
 
   constructor(private http: Http) { }
 
-  private Url = 'http://localhost/mehraneh_darman/server/public/api/expense';  // URL to web API
-  // private Url = 'http://localhost:8000/api/expense';  // URL to web API
+  private Url = 'http://localhost/mehraneh_darman/server/public/api/report';
 
-  saveExpenses (expense: Expense): Observable<any> {
-    console.log(expense.cost_type);
-    
-    return this.http.post(this.Url, expense)
+
+  reportDate (repoDate: RepoDate): Observable<any> {
+    console.log(repoDate);
+    let s = repoDate.sdate.replace(/\//g, "-");
+    let e = repoDate.edate.replace(/\//g, "-");
+    this.Url = this.Url+'/'+s+'/'+e;
+    console.log(this.Url);
+    return this.http.get(this.Url)
       .map(this.extractData)
       .catch(this.handleError);
   }
-
-  // updateExpenses (expense: Expense): Observable<any> {
-  //
-  //   return this.http.put(this.Url+"/"+id, expense)
-  //     .map(this.extractData)
-  //     .catch(this.handleError);
-  // }
 
 
   private extractData(res: Response) {
