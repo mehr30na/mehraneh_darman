@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {  Http, Response} from "@angular/http";
 import {  Expense} from "./expense";
 import {  Observable} from "rxjs/Rx";
-import {  Typeahead } from 'ng2-typeahead';
 
 
 @Injectable()
@@ -10,11 +9,12 @@ export class ExpenseService {
 
   constructor(private http: Http) { }
 
-  // private Url = 'http://localhost/mehraneh_darman/server/public/api/expense';  // URL to web API
-  private Url = 'http://localhost:8000/api/expense';  // URL to web API
+  private Url = 'http://localhost/mehraneh_darman2/server/public/api/expense';  // URL to web API
+  // private Url = 'http://localhost:8000/api/expense';  // URL to web API
 
   saveExpenses (expense: Expense): Observable<any> {
-    console.log(expense);
+    console.log(expense.cost_type);
+    
     return this.http.post(this.Url, expense)
       .map(this.extractData)
       .catch(this.handleError);

@@ -22,15 +22,14 @@ class CreateExpensesTable extends Migration
             $table->string('date');
             $table->string('cost_type');
             $table->integer('patient_id')->unsigned();
-
             $table->timestamps();
         });
 
-        Schema::table('expenses', function (Blueprint $table) {
+        // Schema::table('expenses', function (Blueprint $table) {
 
-            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
+        //     $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
 
-        });
+        // });
     }
 
     /**

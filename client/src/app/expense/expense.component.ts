@@ -28,14 +28,14 @@ export class ExpenseComponent implements OnInit {
   saveExpense (event:Event) {
   // console.log(this.expense);
   event.preventDefault();
-   console.log(this.expense);
+   // console.log(this.expense.cost_type);
   if (!this.expense) { return; }
   // if(!id){
     this.modal_title = "ايجاد پرونده جديد";
     this.expenseService.saveExpenses(this.expense)
       .subscribe(
-        serverresponse  => {},
-        error =>  this.errorMessage = <string>error);
+        serverresponse  => {alert('هزينه با موفقيت ثبت گرديد')},
+        error =>  {this.errorMessage = <string>error,alert(this.errorMessage)});
   // }
   // else {
   //   this.modal_title = "ويرايش پرونده جديد";
@@ -47,31 +47,7 @@ export class ExpenseComponent implements OnInit {
 
 }
 
-  fruitName: string;
-  fruits: any[] = [
-    {
-      id: 1,
-      name: "Apple",
-      searchText: "apple"
-    },
-    {
-      id: 2,
-      name: "Orange",
-      searchText: "orange"
-    },
-    {
-      id: 3,
-      name: "Banana",
-      searchText: "banana"
-    }
-  ];
-
-  selectedFruit: any = this.fruits[0];
-
-  public fruitSelected(fruit) {
-    this.fruitName = fruit ? fruit.id : 'none';
-  }
-
+ 
 
 
 }

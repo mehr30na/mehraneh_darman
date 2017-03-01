@@ -5,8 +5,9 @@ export class Expense {
   public letter_number: number;
   public actual_cost: number;
   public donation: number;
-  public date: string;
   public cost_type: string;
+  public date: string;
+
 
 
 

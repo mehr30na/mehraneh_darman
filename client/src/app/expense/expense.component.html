@@ -5,84 +5,98 @@
     <!-- Form Name -->
     <legend>ثبت هزينه</legend>
 
+    
+
+    <!-- Text input-->
     <div class="form-group">
       <label class="col-md-4 control-label" for="شماره پرونده بيمار">شماره پرونده بيمار</label>
       <div class="col-md-4">
-       <typeahead
-       [list]="fruits"
-       [searchProperty]="'searchText'" [displayProperty]="'searchText'"
-       [maxSuggestions]="2"
-       (suggestionSelected)="fruitSelected($event)"
-       placeholder="Begin typing a fruit" name="selectedFruit" class="form-control input-md" 
-       [(ngModel)]="selectedFruit" >
-     </typeahead>
+        <input id="شماره پرونده بيمار" name="patient_id" type="number" placeholder="شماره پرونده بيمار" class="form-control input-md" required
+        [(ngModel)]="expense.patient_id">
 
-   </div>
- </div>
+      </div>
+    </div>
 
- <!-- Text input-->
- <div class="form-group">
-  <label class="col-md-4 control-label" for="شماره پرونده بيمار">شماره پرونده بيمار</label>
-  <div class="col-md-4">
-    <input id="شماره پرونده بيمار" name="patient_id" type="number" placeholder="شماره پرونده بيمار" class="form-control input-md" required
-    >
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="شماره نامه">شماره نامه</label>
+      <div class="col-md-4">
+        <input id="شماره نامه" name="letter_number" type="number" placeholder="شماره نامه" class="form-control input-md" required
+        [(ngModel)]="expense.letter_number">
 
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="هزينه واقعي">هزينه واقعي</label>
+      <div class="col-md-4">
+        <input id="هزينه واقعي" name="actual_cost" type="number" placeholder="هزينه واقعي" class="form-control input-md" required
+        [(ngModel)]="expense.actual_cost">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="هزينه كمك شده">هزينه كمك شده</label>
+      <div class="col-md-4">
+        <input id="هزينه كمك شده" name="donation" type="number" placeholder="هزينه كمك شده" class="form-control input-md"
+        [(ngModel)]="expense.donation">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="تاريخ">تاريخ</label>
+      <div class="col-md-4">
+        <input id="تاريخ" name="date" type="text" placeholder="YYYY/MM/DD" class="form-control input-md" required
+        [(ngModel)]="expense.date" pattern="\d{4}/\d{2}/\d{2}">
+
+      </div>
+    </div>
+
+    <!-- Select Basic -->
+   <!--  <div class="form-group">
+      <label class="col-md-4 control-label" for="نوع هزينه">نوع هزينه</label>
+      <div class="col-md-4">
+        <select id="نوع هزينه" name="cost_type" class="form-control" required
+        [(ngModel)]="expense.cost_type">
+        <option value="رادیوتراپی">رادیوتراپی</option>
+        <option value="شیمی درمانی">شیمی درمانی</option>
+        <option value="دارو">دارو</option>
+        <option value="متفرقه">متفرقه</option>
+      </select>
+    </div>
+  </div> -->
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="وضعیت تاهل">نوع هزينه</label>
+    <div class="col-md-8">
+      <label class="radio-inline" for="رادیوتراپی">
+        <input type="radio" name="cost_type" id="رادیوتراپی" value="1" 
+        [(ngModel)]="expense.cost_type">
+        رادیوتراپی
+      </label>
+      <label class="radio-inline" for="شیمی درمانی">
+        <input type="radio" name="cost_type" id="شیمی درمانی" value="2"
+        [(ngModel)]="expense.cost_type">
+        شیمی درمانی
+      </label>
+       <label class="radio-inline" for="دارو">
+        <input type="radio" name="cost_type" id="دارو" value="3"
+        [(ngModel)]="expense.cost_type">
+        دارو
+      </label>
+       <label class="radio-inline" for="متفرقه">
+        <input type="radio" name="cost_type" id="متفرقه" value="4"
+        [(ngModel)]="expense.cost_type">
+        متفرقه
+      </label>
+    </div>
   </div>
-</div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="شماره نامه">شماره نامه</label>
-  <div class="col-md-4">
-    <input id="شماره نامه" name="letter_number" type="number" placeholder="شماره نامه" class="form-control input-md" required
-    [(ngModel)]="expense.letter_number">
-
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="هزينه واقعي">هزينه واقعي</label>
-  <div class="col-md-4">
-    <input id="هزينه واقعي" name="actual_cost" type="number" placeholder="هزينه واقعي" class="form-control input-md" required
-    [(ngModel)]="expense.actual_cost">
-
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="هزينه كمك شده">هزينه كمك شده</label>
-  <div class="col-md-4">
-    <input id="هزينه كمك شده" name="donation" type="number" placeholder="هزينه كمك شده" class="form-control input-md"
-    [(ngModel)]="expense.donation">
-
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="تاريخ">تاريخ</label>
-  <div class="col-md-4">
-    <input id="تاريخ" name="date" type="text" placeholder="YYYY/MM/DD" class="form-control input-md" required
-    [(ngModel)]="expense.date" pattern="\d{4}/\d{2}/\d{2}">
-
-  </div>
-</div>
-
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="نوع هزينه">نوع هزينه</label>
-  <div class="col-md-4">
-    <select id="نوع هزينه" name="cost_type" class="form-control"
-    [(ngModel)]="expense.cost_type" required>
-    <option value="1">رادیوتراپی</option>
-    <option value="2">شیمی درمانی</option>
-    <option value="2">دارو</option>
-    <option value="2">متفرقه</option>
-  </select>
-</div>
-</div>
 </fieldset>
 <!-- Button (Double) -->
 <div class="form-group">
