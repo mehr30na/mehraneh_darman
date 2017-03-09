@@ -94,7 +94,15 @@ class ExpenseController extends Controller
         $sdate = str_replace("-", "/", $s);
         $edate = str_replace("-", "/", $e);
 
-        return [$sdate,$edate];
+        $sum = Expense::selectRaw('sum(actual_cost) as actualSum')
+        ->whereRaw('str_to_date(`date`,"%Y/%m/%d") between "' . $sdate . '" AND "' . $edate . '" ')
+            ->get();
+
+        $expenses = Expense::whereRaw('str_to_date(`date`,"%Y/%m/%d") between "' . $sdate . '" AND "' . $edate . '" ')
+            ->get();
+
+        return ['sum' => $sum,'expenses' => $expenses];
+
     }
 
 

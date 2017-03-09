@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {  Http, Response} from "@angular/http";
 import {RepoDate} from './repoDate';
-import {  Observable} from "rxjs/Rx";
+import {  Observable } from "rxjs/Rx";
 
 
 @Injectable()
@@ -10,13 +10,16 @@ export class ReportService {
 
   constructor(private http: Http) { }
 
-  private Url = 'http://localhost/mehraneh_darman/server/public/api/report';
+  // private Url = 'http://localhost/mehraneh_darman/server/public/api/report';
+  private Url = 'http://localhost:8000/api/report';
 
 
   reportDate (repoDate: RepoDate): Observable<any> {
+    this.Url = 'http://localhost:8000/api/report';
     console.log(repoDate);
     let s = repoDate.sdate.replace(/\//g, "-");
     let e = repoDate.edate.replace(/\//g, "-");
+
     this.Url = this.Url+'/'+s+'/'+e;
     console.log(this.Url);
     return this.http.get(this.Url)
@@ -25,9 +28,11 @@ export class ReportService {
   }
 
 
+
   private extractData(res: Response) {
     let response = res.json();
     return response;
+
   }
   private handleError (error: Response | any) {
     // In a real world app, we might use a remote logging infrastructure
