@@ -48,7 +48,7 @@ export class PatientComponent implements OnInit {
         // this.patients = <Patient[]>serverresponse.data,
         this.patients = <Patient[]>serverresponse,
           //this.total = <number>serverresponse.total,
-          // console.log(this.patients);
+          console.log(this.patients);
           this.loading=false;
 
       },

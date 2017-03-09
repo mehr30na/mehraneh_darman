@@ -33,7 +33,7 @@ class PatientController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Patient
      */
     public function store(Request $request)
     {
@@ -93,7 +93,7 @@ class PatientController extends Controller
         //
         // return Patient::destroy($id);
         //return $term;
-        return Patient::    where('fullname', 'LIKE', '%'. $term .'%')
+        return Patient:: where('fullname', 'LIKE', '%'. $term .'%')
                         ->orWhere('national_code', 'LIKE', '%'. $term .'%')
                         ->orWhere('idcrd_number', 'LIKE', '%'. $term .'%')
                         ->orWhere('birt_hdate', 'LIKE', '%'. $term .'%')
