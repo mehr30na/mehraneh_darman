@@ -13,6 +13,7 @@ export class ReportComponent implements OnInit {
 	errorMessage:string="";
   private expenses: Expense[];
   private sum: number;
+  private loading: boolean;
 
   constructor(private reportService:ReportService) { }
 
@@ -22,6 +23,7 @@ export class ReportComponent implements OnInit {
 
 
 repo(event:Event){
+    this.loading = true;
 	event.preventDefault();
 	// console.log(this.repoDate);
 	this.reportService.reportDate(this.repoDate)
@@ -30,6 +32,7 @@ repo(event:Event){
 
           this.expenses = <Expense[]>serverresponse.expenses;
           this.sum = <number>serverresponse.sum[0].actualSum;
+          this.loading = false;
 
 
         },
