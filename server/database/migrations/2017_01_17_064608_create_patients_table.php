@@ -22,7 +22,9 @@ class CreatePatientsTable extends Migration
             $table->string('birt_hdate');
             $table->string('father_name');
             $table->string('birth_place');
+            $table->string('birth_village');
             $table->string('living_place');
+            $table->string('living_village');
             $table->integer('file_number');
             $table->string('gender');
             $table->string('phone');

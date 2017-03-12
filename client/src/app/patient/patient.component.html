@@ -133,17 +133,22 @@
                   <select id="محل تولد" name="birth_place" class="form-control"
                           [(ngModel)]="patient.birth_place" required>
                     <option value="زنجان">زنجان</option>
+                    <option value="میانه">میانه</option>
+                    <option value="تهران">تهران</option>
                     <option value="ابهر">ابهر</option>
+                    <option value="خدابنده">خدابنده</option>
+                    <option value="ایجرود">ایجرود</option>
                     <option value="خرمدره">خرمدره</option>
+                    <option value="طارم">طارم</option>
+                    <option value="ماه‌نشان">ماه‌نشان</option>
+                    <option value="سلطانیه">سلطانیه</option>
                     <option value="قیدار">قیدار</option>
                     <option value="هیدج">هیدج</option>
                     <option value="صائین‌قلعه">صائین‌قلعه</option>
-                    <option value="سلطانیه">سلطانیه</option>
                     <option value="آب بر">آب بر</option>
                     <option value="سجاس">سجاس</option>
                     <option value="سهرورد">سهرورد</option>
                     <option value="زرین رود">زرین رود</option>
-                    <option value="ماه‌نشان">ماه‌نشان</option>
                     <option value="کرسف">کرسف</option>
                     <option value="گرماب">گرماب</option>
                     <option value="دندی">دندی</option>
@@ -158,22 +163,32 @@
               </div>
               <!-- Select Basic -->
               <div class="form-group">
+                <label class="col-md-4 control-label" for="روستای محل تولد">روستای محل تولد</label>
+                <div class="col-md-8">
+                  <input id="روستای محل تولد" name="father_name" type="text" placeholder="روستای محل تولد" class="form-control input-md"
+                         [(ngModel)]="patient.birth_village" required>
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-md-4 control-label" for="محل سکونت">محل سکونت</label>
                 <div class="col-md-8">
                   <select id="محل سکونت" name="living_place" class="form-control"
                           [(ngModel)]="patient.living_place" required>
                     <option value="زنجان">زنجان</option>
                     <option value="ابهر">ابهر</option>
+                    <option value="خدابنده">خدابنده</option>
+                    <option value="ایجرود">ایجرود</option>
                     <option value="خرمدره">خرمدره</option>
+                    <option value="طارم">طارم</option>
+                    <option value="ماه‌نشان">ماه‌نشان</option>
+                    <option value="سلطانیه">سلطانیه</option>
                     <option value="قیدار">قیدار</option>
                     <option value="هیدج">هیدج</option>
                     <option value="صائین‌قلعه">صائین‌قلعه</option>
-                    <option value="سلطانیه">سلطانیه</option>
                     <option value="آب بر">آب بر</option>
                     <option value="سجاس">سجاس</option>
                     <option value="سهرورد">سهرورد</option>
                     <option value="زرین رود">زرین رود</option>
-                    <option value="ماه‌نشان">ماه‌نشان</option>
                     <option value="کرسف">کرسف</option>
                     <option value="گرماب">گرماب</option>
                     <option value="دندی">دندی</option>
@@ -186,7 +201,15 @@
                   </select>
                 </div>
               </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="روستای محل سکونت">روستای محل سکونت</label>
+                <div class="col-md-8">
+                  <input id="روستای محل سکونت" name="father_name" type="text" placeholder="روستای محل سکونت" class="form-control input-md"
+                         [(ngModel)]="patient.living_village" required>
+                </div>
+              </div>
             </div>
+
             <div class="col-md-6">
               <!-- Text input-->
               <div class="form-group">

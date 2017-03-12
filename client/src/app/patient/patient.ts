@@ -6,7 +6,9 @@ export class Patient {
   public birt_hdate: string;
   public father_name: string;
   public birth_place: string;
+  public birth_village: string;
   public living_place: string;
+  public living_village: string;
   public file_number: number;
   public gender: string;
   public phone: string;
