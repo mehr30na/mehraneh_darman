@@ -129,46 +129,39 @@
 
               </div>
             </div>
-
-            <!-- Select Basic -->
-            <!--  <div class="form-group">
-               <label class="col-md-4 control-label" for="نوع هزينه">نوع هزينه</label>
-               <div class="col-md-4">
-                 <select id="نوع هزينه" name="cost_type" class="form-control" required
-                 [(ngModel)]="expense.cost_type">
-                 <option value="رادیوتراپی">رادیوتراپی</option>
-                 <option value="شیمی درمانی">شیمی درمانی</option>
-                 <option value="دارو">دارو</option>
-                 <option value="متفرقه">متفرقه</option>
-               </select>
-             </div>
-           </div> -->
-
             <div class="form-group">
-              <label class="col-md-4 control-label" for="وضعیت تاهل">نوع هزينه</label>
-              <div class="col-md-8">
-                <label class="radio-inline" for="رادیوتراپی">
-                  <input type="radio" name="cost_type" id="رادیوتراپی" value="رادیوتراپی"
-                         [(ngModel)]="expense.cost_type">
-                  رادیوتراپی
-                </label>
-                <label class="radio-inline" for="شیمی درمانی">
-                  <input type="radio" name="cost_type" id="شیمی درمانی" value="شیمی درمانی"
-                         [(ngModel)]="expense.cost_type">
-                  شیمی درمانی
-                </label>
-                <label class="radio-inline" for="دارو">
-                  <input type="radio" name="cost_type" id="دارو" value="دارو"
-                         [(ngModel)]="expense.cost_type">
-                  دارو
-                </label>
-                <label class="radio-inline" for="متفرقه">
-                  <input type="radio" name="cost_type" id="متفرقه" value="متفرقه"
-                         [(ngModel)]="expense.cost_type">
-                  متفرقه
-                </label>
+              <label class="col-md-4 control-label" for="نوع هزینه">نوع هزینه</label>
+              <div class="col-md-4">
+                <input id="نوع هزینه" name="cost_type" type="text"  class="form-control input-md" required
+                       [(ngModel)]="expense.cost_type">
               </div>
             </div>
+
+            <!--<div class="form-group">-->
+              <!--<label class="col-md-4 control-label" for="وضعیت تاهل">نوع هزينه</label>-->
+              <!--<div class="col-md-8">-->
+                <!--<label class="radio-inline" for="رادیوتراپی">-->
+                  <!--<input type="radio" name="cost_type" id="رادیوتراپی" value="رادیوتراپی"-->
+                         <!--[(ngModel)]="expense.cost_type">-->
+                  <!--رادیوتراپی-->
+                <!--</label>-->
+                <!--<label class="radio-inline" for="شیمی درمانی">-->
+                  <!--<input type="radio" name="cost_type" id="شیمی درمانی" value="شیمی درمانی"-->
+                         <!--[(ngModel)]="expense.cost_type">-->
+                  <!--شیمی درمانی-->
+                <!--</label>-->
+                <!--<label class="radio-inline" for="دارو">-->
+                  <!--<input type="radio" name="cost_type" id="دارو" value="دارو"-->
+                         <!--[(ngModel)]="expense.cost_type">-->
+                  <!--دارو-->
+                <!--</label>-->
+                <!--<label class="radio-inline" for="متفرقه">-->
+                  <!--<input type="radio" name="cost_type" id="متفرقه" value="متفرقه"-->
+                         <!--[(ngModel)]="expense.cost_type">-->
+                  <!--متفرقه-->
+                <!--</label>-->
+              <!--</div>-->
+            <!--</div>-->
 
           </fieldset>
           <!-- Button (Double) -->
