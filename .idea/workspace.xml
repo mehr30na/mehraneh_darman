@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f244e621-298a-4674-a84b-5664b1268735" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/database/patients.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/patient/patient.component.html" afterPath="$PROJECT_DIR$/client/src/app/patient/patient.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/patient/patient.ts" afterPath="$PROJECT_DIR$/client/src/app/patient/patient.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/app/Http/Controllers/PatientController.php" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/PatientController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/app/Patient.php" afterPath="$PROJECT_DIR$/server/app/Patient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/database/migrations/2017_01_17_064608_create_patients_table.php" afterPath="$PROJECT_DIR$/server/database/migrations/2017_01_17_064608_create_patients_table.php" />
     </list>
     <ignored path="mehraneh_darman.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="patient.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="patient.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/patient/patient.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
+            <state relative-caret-position="1164">
               <caret line="209" column="20" lean-forward="false" selection-start-line="209" selection-start-column="20" selection-end-line="209" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="patients.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/database/patients.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -52,10 +58,12 @@
       <find>Expense</find>
       <find>patient</find>
       <find>روستای محل تولد</find>
+      <find>\(([0-9])([0-9])(,)( )</find>
     </findStrings>
     <replaceStrings>
       <replace>روستای محل تولد</replace>
       <replace>روستای محل سکونت</replace>
+      <replace>\(</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -105,6 +113,7 @@
         <option value="$PROJECT_DIR$/server/app/Http/Controllers/PatientController.php" />
         <option value="$PROJECT_DIR$/client/src/app/patient/patient.ts" />
         <option value="$PROJECT_DIR$/client/src/app/patient/patient.component.html" />
+        <option value="$PROJECT_DIR$/server/database/patients.sql" />
       </list>
     </option>
   </component>
@@ -958,7 +967,7 @@
       <workItem from="1488343379142" duration="1205000" />
       <workItem from="1489034744032" duration="11068000" />
       <workItem from="1489052947646" duration="1748000" />
-      <workItem from="1489294432437" duration="3802000" />
+      <workItem from="1489294432437" duration="4774000" />
     </task>
     <task id="LOCAL-00001" summary="Change">
       <created>1485858801495</created>
@@ -988,15 +997,22 @@
       <option name="project" value="LOCAL" />
       <updated>1489300911234</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Change Expense">
+      <created>1489302135882</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1489302135882</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65790000" />
+    <option name="totallyTimeSpent" value="66762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="734" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1009,7 +1025,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30529594" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30529594" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1065,8 +1081,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/app/app.route.ts" />
-    <entry file="file://$PROJECT_DIR$/client/app/patient/patient.service.ts" />
     <entry file="file://$PROJECT_DIR$/client/app/shared/spinner.component.ts" />
     <entry file="file://$PROJECT_DIR$/client/app/patient/patient.component.ts" />
     <entry file="file://$PROJECT_DIR$/client/app/app.module.ts" />
@@ -1370,8 +1384,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/patient/patient.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="1164">
           <caret line="209" column="20" lean-forward="false" selection-start-line="209" selection-start-column="20" selection-end-line="209" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/patients.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
           <folding />
         </state>
       </provider>
