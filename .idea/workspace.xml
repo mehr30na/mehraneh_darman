@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f244e621-298a-4674-a84b-5664b1268735" name="Default" comment="Change Expense">
+    <list default="true" id="f244e621-298a-4674-a84b-5664b1268735" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/expense/expense.component.html" afterPath="$PROJECT_DIR$/client/src/app/expense/expense.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/expense/expense.component.ts" afterPath="$PROJECT_DIR$/client/src/app/expense/expense.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/expense/expense.service.ts" afterPath="$PROJECT_DIR$/client/src/app/expense/expense.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/patient/patient.component.html" afterPath="$PROJECT_DIR$/client/src/app/patient/patient.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/patient/patient.service.ts" afterPath="$PROJECT_DIR$/client/src/app/patient/patient.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/report/report.service.ts" afterPath="$PROJECT_DIR$/client/src/app/report/report.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/sidebar/sidebar.component.html" afterPath="$PROJECT_DIR$/client/src/app/sidebar/sidebar.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/index.html" afterPath="$PROJECT_DIR$/client/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/app/Http/Controllers/ExpenseController.php" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/ExpenseController.php" />
     </list>
     <ignored path="mehraneh_darman.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -590,7 +581,7 @@
       <workItem from="1489052947646" duration="1748000" />
       <workItem from="1489294432437" duration="4774000" />
       <workItem from="1489389302391" duration="523000" />
-      <workItem from="1489389903088" duration="345000" />
+      <workItem from="1489389903088" duration="444000" />
     </task>
     <task id="LOCAL-00001" summary="Change">
       <created>1485858801495</created>
@@ -627,11 +618,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489302135882</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Change Expense">
+      <created>1489390283715</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1489390283715</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67630000" />
+    <option name="totallyTimeSpent" value="67729000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
