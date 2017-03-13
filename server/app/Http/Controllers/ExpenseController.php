@@ -16,7 +16,7 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        return Expense::paginate(10);
+        return Expense::all();
     }
 
     /**
@@ -37,6 +37,10 @@ class ExpenseController extends Controller
     public function store(Request $request)
     {
         //
+         $this->validate($request, [
+                'letter_number' => 'unique:expenses'
+
+            ]);
         return Expense::create($request->all());
     }
 
@@ -94,6 +98,7 @@ class ExpenseController extends Controller
         $sdate = str_replace("-", "/", $s);
         $edate = str_replace("-", "/", $e);
 
+        // return [$sdate,$edate];
         $sum = Expense::selectRaw('sum(actual_cost) as actualSum')
         ->whereRaw('str_to_date(`date`,"%Y/%m/%d") between "' . $sdate . '" AND "' . $edate . '" ')
             ->get();

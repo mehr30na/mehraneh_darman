@@ -14,6 +14,9 @@ export class ExpenseComponent implements OnInit {
   private expense = new Expense();
   private expenses:Expense[];
   private errorMessage:string;
+  private total:number;
+  private perpage:number;
+  private pageNumbers:number = this.total%this.perpage;
 
 
 
@@ -51,8 +54,8 @@ export class ExpenseComponent implements OnInit {
     this.expenseService.getExpenses().subscribe(
       serverresponse => {
         // this.patients = <Patient[]>serverresponse.data,
-        this.expenses = <Expense[]>serverresponse.data,
-          //this.total = <number>serverresponse.total,
+        this.expenses = <Expense[]>serverresponse,
+        
           console.log(this.expenses);
           this.loading=false;
 

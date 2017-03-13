@@ -9,8 +9,8 @@ export class ExpenseService {
 
   constructor(private http: Http) { }
 
-  // private Url = 'http://localhost/mehraneh_darman/server/public/api/expense';  // URL to web API
-  private Url = 'http://localhost:8000/api/expense';  // URL to web API
+  private Url = 'http://localhost/mehraneh_darman/server/public/api/expense';  // URL to web API
+  // private Url = 'http://localhost:8000/api/expense';  // URL to web API
 
 
   getExpense(id): Observable<Expense>{

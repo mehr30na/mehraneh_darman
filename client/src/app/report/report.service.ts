@@ -10,12 +10,13 @@ export class ReportService {
 
   constructor(private http: Http) { }
 
-  // private Url = 'http://localhost/mehraneh_darman/server/public/api/report';
-  private Url = 'http://localhost:8000/api/report';
+  private Url = 'http://localhost/mehraneh_darman/server/public/api/report';
+  // private Url = 'http://localhost:8000/api/report';
 
 
   reportDate (repoDate: RepoDate): Observable<any> {
-    this.Url = 'http://localhost:8000/api/report';
+    // this.Url = 'http://localhost:8000/api/report';
+    this.Url = 'http://localhost/mehraneh_darman/server/public/api/report';
     console.log(repoDate);
     let s = repoDate.sdate.replace(/\//g, "-");
     let e = repoDate.edate.replace(/\//g, "-");

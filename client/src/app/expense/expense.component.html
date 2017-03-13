@@ -25,9 +25,9 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let cost of expenses">
+      <tr *ngFor="let cost of expenses;let i= index">
 
-        <td class="hidden-xs">{{cost.id}}</td>
+        <td class="hidden-xs">{{i+1}}</td>
 
         <td>{{cost.patient_id}}</td>
         <td>{{cost.letter_number}}</td>
@@ -48,11 +48,8 @@
       </div>
       <div class="col col-xs-8">
         <ul class="pagination hidden-xs pull-right">
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
+          <li *ngFor="let page of pageNumbers"><a href="#">{{page}}}</a></li>
+          
         </ul>
         <ul class="pagination visible-xs pull-right">
           <li><a href="#">«</a></li>

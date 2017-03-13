@@ -24,9 +24,9 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let patient of patients">
+      <tr *ngFor="let patient of patients;let i= index">
 
-        <td class="hidden-xs">{{patient.id}}</td>
+        <td class="hidden-xs">{{i+1}}</td>
 
         <td>{{patient.fullname}}</td>
         <td>{{patient.national_code}}</td>
@@ -137,6 +137,9 @@
                     <option value="تهران">تهران</option>
                     <option value="ابهر">ابهر</option>
                     <option value="خدابنده">خدابنده</option>
+                    <option value="خدابنده">تاكستان</option>
+                    <option value="خدابنده">تكاب</option>
+                    <option value="خدابنده">بيجار</option>
                     <option value="ایجرود">ایجرود</option>
                     <option value="خرمدره">خرمدره</option>
                     <option value="طارم">طارم</option>
@@ -177,6 +180,8 @@
                     <option value="زنجان">زنجان</option>
                     <option value="ابهر">ابهر</option>
                     <option value="خدابنده">خدابنده</option>
+                    <option value="خدابنده">تكاب</option>
+                    <option value="خدابنده">بيجار</option>
                     <option value="ایجرود">ایجرود</option>
                     <option value="خرمدره">خرمدره</option>
                     <option value="طارم">طارم</option>
