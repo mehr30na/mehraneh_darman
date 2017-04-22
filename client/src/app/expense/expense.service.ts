@@ -9,12 +9,17 @@ export class ExpenseService {
 
   constructor(private http: Http) { }
 
-  private Url = 'http://localhost/mehraneh_darman/server/public/api/expense';  // URL to web API
-  // private Url = 'http://localhost:8000/api/expense';  // URL to web API
+  // private Url = 'http://localhost/mehraneh_darman/server/public/api/expense';  // URL to web API
+  private Url = 'http://localhost:8000/api/expense';  // URL to web API
 
 
   getExpense(id): Observable<Expense>{
     return this.http.get(this.Url+"/"+id)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+  getExpenseByFile(filenum): Observable<Expense[]>{
+    return this.http.get(this.Url+"/filenum/"+filenum)
       .map(this.extractData)
       .catch(this.handleError);
   }
@@ -25,17 +30,14 @@ export class ExpenseService {
       .catch(this.handleError);
   }
 
-
   saveExpenses (expense: Expense): Observable<any> {
     console.log(expense.cost_type);
-
     return this.http.post(this.Url, expense)
       .map(this.extractData)
       .catch(this.handleError);
   }
 
   updateExpense (id,expense: Expense): Observable<any> {
-
     return this.http.put(this.Url+"/"+id, expense)
       .map(this.extractData)
       .catch(this.handleError);

@@ -93,21 +93,27 @@ class ExpenseController extends Controller
 
 
 
-    public function reportDate($s,$e){
+    public function reportDate($s,$e,$c){
 
         $sdate = str_replace("-", "/", $s);
         $edate = str_replace("-", "/", $e);
 
+
         // return [$sdate,$edate];
         $sum = Expense::selectRaw('sum(actual_cost) as actualSum')
         ->whereRaw('str_to_date(`date`,"%Y/%m/%d") between "' . $sdate . '" AND "' . $edate . '" ')
+//            ->whereRaw('')
             ->get();
 
         $expenses = Expense::whereRaw('str_to_date(`date`,"%Y/%m/%d") between "' . $sdate . '" AND "' . $edate . '" ')
             ->get();
-
         return ['sum' => $sum,'expenses' => $expenses];
 
+    }
+
+    public function expenseByFile($filenum){
+//        return $filenum;
+        return Expense::where('patient_id', $filenum)->get();
     }
 
 

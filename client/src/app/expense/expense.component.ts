@@ -31,21 +31,14 @@ export class ExpenseComponent implements OnInit {
 
 
   getExpense(id) {
-
     this.loading=true;
     this.expenseService.getExpense(id).subscribe(
       serverresponse => {
-        // this.patients = <Patient[]>serverresponse.data,
         this.expense = <Expense>serverresponse,
-          //this.total = <number>serverresponse.total,
-          // console.log(this.patients);
           this.loading=false;
-
       },
       error => {this.errorMessage = <string>error}
-
     );
-
   }
 
 
@@ -55,7 +48,7 @@ export class ExpenseComponent implements OnInit {
       serverresponse => {
         // this.patients = <Patient[]>serverresponse.data,
         this.expenses = <Expense[]>serverresponse,
-        
+
           console.log(this.expenses);
           this.loading=false;
 

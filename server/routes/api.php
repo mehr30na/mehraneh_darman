@@ -18,6 +18,6 @@ use Illuminate\Http\Request;
 //})->middleware('auth:api');
 Route::get('/patient/search/{term}','PatientController@search');
 Route::resource('/patient', 'PatientController', ['except' => ['create', 'edit']]);
-Route::get('/report/{s}/{e}', 'ExpenseController@reportDate');
+Route::get('/report/{s}/{e}/{c}', 'ExpenseController@reportDate');
 Route::resource('/expense', 'ExpenseController', ['except' => ['create', 'edit']]);
-
+Route::get('/expense/filenum/{filenum}', 'ExpenseController@expenseByFile');

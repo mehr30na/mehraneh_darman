@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PatientService } from './patient.service';
 import { Patient } from "./patient";
+import {ExpenseService} from "../expense/expense.service";
+import {Expense} from "../expense/expense";
 declare var $:any;
 
 @Component({
@@ -15,9 +17,14 @@ export class PatientComponent implements OnInit {
   private patient = new Patient();
   private modal_title:string;
   private searchTerm:string = "";
+  expenses: Expense[];
+  private expense: Expense;
 
 
-  constructor(private patientService: PatientService) { }
+  constructor(private patientService: PatientService,
+              private expenseService:ExpenseService
+
+  ) { }
 
   ngOnInit() {
     this.getPatients();
@@ -110,6 +117,29 @@ export class PatientComponent implements OnInit {
 
     );
 
+  }
+
+  getExpense(id) {
+    this.modal_title = " ویرایش هزینه ها";
+    this.loading=true;
+    this.expenseService.getExpense(id).subscribe(
+      serverresponse => {
+        this.expense = <Expense>serverresponse,
+          this.loading=false;
+      },
+      error => {this.errorMessage = <string>error}
+    );
+  }
+  getExpenseByFile(filenum){
+    this.loading=true;
+    this.modal_title = " هزینه های پرونده شماره"+filenum;
+    this.expenseService.getExpenseByFile(filenum).subscribe(
+      serverresponse => {
+        this.expenses = <Expense[]>serverresponse,
+          this.loading=false;
+      },
+      error => {this.errorMessage = <string>error}
+    );
   }
 
 }
